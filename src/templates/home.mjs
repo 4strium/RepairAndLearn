@@ -41,15 +41,14 @@ export function homePage(ctx) {
           : ""}
       </div>
 
-      <div class="hero__visual reveal" aria-hidden="false">
+      <div class="hero__visual reveal" aria-hidden="true">
         <div class="hero-panel screws">
-          <img class="hero-panel__logo"
-               src="/img/brand/wordmark-1280.webp"
-               srcset="/img/brand/wordmark-640.webp 640w, /img/brand/wordmark-1280.webp 1280w"
-               sizes="(min-width: 960px) 520px, 90vw"
-               width="1280" height="610" alt="Repair n' Learn" fetchpriority="high">
-          <img class="hero-panel__icon" src="/img/brand/logo-icon-512.webp" width="512" height="512" alt="" loading="lazy">
+          <video class="hero-panel__video" autoplay loop muted playsinline preload="metadata"
+                 poster="/animation-poster.webp" width="1280" height="720">
+            <source src="/animation.mp4" type="video/mp4">
+          </video>
         </div>
+        <img class="hero-panel__icon" src="/img/brand/logo-icon-512.webp" width="512" height="512" alt="" loading="lazy">
       </div>
     </div>
   </section>
