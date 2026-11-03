@@ -10,6 +10,7 @@ image: /uploads/events/install-party-linux.svg
 image_alt: Illustration d'un terminal de commandes sur fond brun
 summary: Donne une seconde vie à ton vieux PC en installant Linux, avec l'aide de l'équipe.
 price: Gratuit
+draft: true
 ---
 Ton ordinateur est devenu lent&nbsp;? Windows ne veut plus se mettre à jour&nbsp;? **Linux peut lui offrir une seconde jeunesse.**
 

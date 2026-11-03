@@ -10,6 +10,7 @@ image: /uploads/events/repair-cafe-fetes.svg
 image_alt: Illustration d'un cadeau et d'une clé sur fond corail
 summary: Guirlandes, jouets, appareils offerts l'an dernier… on remet tout en état avant Noël.
 price: Gratuit
+draft: true
 ---
 Avant les fêtes, offrons une seconde vie aux objets&nbsp;! Guirlandes lumineuses qui clignotent de travers, jouets en panne, petit appareil reçu l'an dernier qui dort dans un tiroir&nbsp;: **apporte-les et on regarde ensemble.**
 

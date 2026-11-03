@@ -45,7 +45,7 @@ function build() {
   return new Promise((resolve) => {
     const child = spawn(process.execPath, ["scripts/build.mjs"], {
       stdio: "inherit",
-      env: { ...process.env, URL: process.env.URL ?? `http://localhost:${PORT}` },
+      env: { ...process.env, URL: process.env.URL ?? `http://localhost:${PORT}`, DEV_SERVER: "true" },
     });
     child.on("exit", (code) => {
       building = false;

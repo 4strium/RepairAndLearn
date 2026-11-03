@@ -1,5 +1,7 @@
 # Repair n' Learn — documentation technique
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b74d3fd3-7f1b-4cc4-ad95-40ef954e3fa2/deploy-status)](https://app.netlify.com/projects/repair-and-learn/deploys)
+
 Ce document explique comment installer le site, modifier son contenu ou son code, le tester et le publier. Le site est un générateur statique : les pages HTML sont fabriquées à partir de fichiers Markdown, de gabarits JavaScript et de ressources, puis publiées depuis `dist/`.
 
 ## Sommaire
@@ -110,6 +112,7 @@ category: repair
 types: [Vêtements & textile]
 difficulty: facile
 duration: 30 min
+# draft: true  # visible uniquement avec npm run dev
 summary: Une phrase claire qui décrit le résultat du guide.
 cover: /uploads/guides/fermeture-eclair.jpg
 cover_alt: Une fermeture éclair réparée
@@ -134,7 +137,7 @@ Ajouter des ressources ou une conclusion.
 
 Champs requis : `title`, `author`, `date`, `category`, `summary`. `category` vaut `repair` ou `open-source`. `difficulty` (facultatif) vaut `facile`, `moyen` ou `difficile`. Les types autorisés par catégorie figurent dans `src/site.config.mjs` ; les filtres de la page Guides et le formulaire CMS sont produits depuis cette configuration. Ajouter un type dans la bonne catégorie pour l'activer partout.
 
-Chaque titre Markdown `##` devient une section du guide. Les sections ordinaires sont numérotées automatiquement ; les sections nommées « Conclusion », « Ressources », « Pour finir », « Et ensuite » ou « Pour aller plus loin » sont traitées comme des sections de fin, non numérotées. Les titres `###` restent des sous-sections d'une étape. Les matériaux sont une liste YAML. Un contenu peut être masqué du site en ajoutant `draft: true` au frontmatter.
+Chaque titre Markdown `##` devient une section du guide. Les sections ordinaires sont numérotées automatiquement ; les sections nommées « Conclusion », « Ressources », « Pour finir », « Et ensuite » ou « Pour aller plus loin » sont traitées comme des sections de fin, non numérotées. Les titres `###` restent des sous-sections d'une étape. Les matériaux sont une liste YAML. Pour préparer un contenu sans le publier, ajouter `draft: true` (booléen YAML, sans guillemets) au frontmatter : il sera visible avec `npm run dev`, mais exclu des builds de production.
 
 Encadrés reconnus :
 
@@ -175,13 +178,14 @@ image_alt: Des bénévoles autour d'un établi
 summary: Une phrase d'information pour la carte de l'événement.
 price: Gratuit
 registration_url: https://exemple.org/inscription
+# draft: true  # visible uniquement avec npm run dev
 ---
 Description, programme et informations pratiques.
 ```
 
 `type` doit être une clé de `eventTypes` dans `src/site.config.mjs` (`repair-cafe` ou `open-source`). Les heures sont saisies en heure de Paris, au format `AAAA-MM-JJ HH:mm`. Si `end` est omise, la durée par défaut est de deux heures. Les événements terminés apparaissent dans la liste des rendez-vous passés. Un fichier `.ics` est créé au build pour chaque rendez-vous encore à venir.
 
-Les contenus avec `draft: true` sont ignorés par le build. Pour retirer un contenu, supprimer son fichier Markdown et les images qui ne sont plus utilisées après vérification des références.
+Pour les guides comme pour les rendez-vous, `draft: true` dans le frontmatter affiche le contenu dans le serveur de développement (`npm run dev`) et l'exclut d'un build normal ou du déploiement Netlify. Le champ doit être un booléen YAML (`true`, sans guillemets). Pour retirer définitivement un contenu, supprimer son fichier Markdown et les images qui ne sont plus utilisées après vérification des références.
 
 ### Modifier la page À propos
 

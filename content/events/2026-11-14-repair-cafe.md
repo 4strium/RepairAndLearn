@@ -10,6 +10,7 @@ image: /uploads/events/repair-cafe-novembre.svg
 image_alt: Illustration d'une clé à molette sur fond rouge
 summary: Apporte ton objet en panne, des bénévoles t'aident à le réparer, autour d'un café.
 price: Gratuit
+draft: true
 ---
 Un objet qui ne marche plus&nbsp;? Ne le jette pas, **viens le réparer avec nous**&nbsp;! Nos bénévoles t'aident à comprendre la panne et te guident pas à pas, sans te prendre l'objet des mains.
 

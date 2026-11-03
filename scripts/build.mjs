@@ -27,6 +27,7 @@ const SRC = path.resolve("src");
 
 const siteUrl = (process.env.URL || config.siteUrl).replace(/\/$/, "");
 const now = process.env.BUILD_NOW ? new Date(process.env.BUILD_NOW) : new Date();
+const includeDrafts = process.env.DEV_SERVER === "true";
 
 async function write(rel, content) {
   const file = path.join(DIST, rel);
@@ -74,7 +75,11 @@ async function main() {
   const [dims, assets] = await Promise.all([buildPublic(PUBLIC, DIST), buildAssets()]);
   setImageDims(dims);
 
-  const [events, guides, about] = await Promise.all([loadEvents(now), loadGuides(), loadAbout()]);
+  const [events, guides, about] = await Promise.all([
+      loadEvents(now, { includeDrafts }),
+      loadGuides({ includeDrafts }),
+      loadAbout(),
+    ]);
   const ctx = { config, siteUrl, assets, events, guides, about, dims, now };
 
   // Pages

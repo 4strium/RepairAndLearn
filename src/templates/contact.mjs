@@ -106,7 +106,7 @@ export function contactPage(ctx) {
         <div class="card side-card side-card--accent reveal">
           <span class="side-card__icon">${icon("wrench")}</span>
           <h2>Un objet à réparer&nbsp;?</h2>
-          <p>Le plus simple : viens directement à un <a href="/rendez-vous/">repair café</a> avec ton objet.</p>
+          <p>Le plus simple : viens directement à un <a href="/rendez-vous/?type=repair-cafe">repair café</a> avec ton objet.</p>
         </div>
       </aside>
     </div>

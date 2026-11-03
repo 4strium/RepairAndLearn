@@ -11,6 +11,7 @@ image_alt: Illustration de branches Git sur fond sable
 summary: "Versionner ses projets et contribuer à l'open source : les bases, en pratique."
 price: Gratuit
 registration_url: https://www.facebook.com/profile.php?id=61595739621512
+draft: true
 ---
 Tu as déjà rendu un projet nommé `rapport_final_v3_VRAIMENT_final.zip`&nbsp;? Cet atelier est fait pour toi.
 

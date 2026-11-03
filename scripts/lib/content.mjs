@@ -109,10 +109,10 @@ const asList = (v) => (Array.isArray(v) ? v.map(String) : v ? [String(v)] : []);
 /* Rendez-vous                                                         */
 /* ------------------------------------------------------------------ */
 
-export async function loadEvents(now = new Date()) {
+export async function loadEvents(now = new Date(), { includeDrafts = false } = {}) {
   const entries = await readEntries(path.join(CONTENT, "events"));
   const events = entries
-    .filter((e) => !e.data.draft)
+    .filter((e) => includeDrafts || !e.data.draft)
     .map((e) => {
       required(e, ["title", "type", "start", "location"]);
       if (!config.eventTypes[e.data.type]) {
@@ -154,10 +154,10 @@ export function guideTypeCategory(type) {
   return null;
 }
 
-export async function loadGuides() {
+export async function loadGuides({ includeDrafts = false } = {}) {
   const entries = await readEntries(path.join(CONTENT, "guides"));
   const guides = entries
-    .filter((e) => !e.data.draft)
+    .filter((e) => includeDrafts || !e.data.draft)
     .map((e) => {
       required(e, ["title", "author", "date", "category", "summary"]);
       const d = e.data;
