@@ -244,11 +244,10 @@ Le fichier `netlify.toml` configure déjà :
 ### Première configuration
 
 1. Relier dans Netlify le dépôt GitHub qui contient le projet et autoriser l'accès au dépôt.
-2. Si le projet reste dans le dépôt `4strium/ENIB` en sous-dossier, renseigner **Base directory** : `S5/SHI/repair_and_learn`. Si ce projet est déplacé à la racine d'un dépôt dédié, laisser ce champ vide.
-3. Vérifier que les paramètres de build affichent `npm run build` et `dist` (ils sont aussi déclarés dans `netlify.toml`).
-4. Déployer la branche publiée, actuellement `main`, puis vérifier le résultat et l'URL Netlify.
-5. Si un domaine personnalisé est ajouté, le configurer dans Netlify et vérifier HTTPS/DNS ainsi que l'URL canonique générée.
-6. Configurer séparément l'authentification de `/admin/` si l'éditeur CMS doit être utilisé (voir la section suivante).
+2. Vérifier que les paramètres de build affichent `npm run build` et `dist` (ils sont aussi déclarés dans `netlify.toml`).
+3. Déployer la branche publiée, actuellement `main`, puis vérifier le résultat et l'URL Netlify.
+4. Si un domaine personnalisé est ajouté, le configurer dans Netlify et vérifier HTTPS/DNS ainsi que l'URL canonique générée.
+5. Configurer séparément l'authentification de `/admin/` si l'éditeur CMS doit être utilisé (voir la section suivante).
 
 Une mise à jour de la branche publiée déclenche normalement un nouveau build et déploiement Netlify. Les demandes de fusion et branches de prévisualisation peuvent être utilisées pour contrôler le site avant publication, selon les réglages du site Netlify. Ne pas éditer `dist/` : Netlify le régénère à chaque déploiement.
 

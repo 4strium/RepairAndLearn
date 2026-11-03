@@ -80,9 +80,9 @@ export default {
    * `subdir` : dossier du projet DANS le dépôt ("" si le site est à la racine).
    */
   cms: {
-    repo: "4strium/ENIB",
+    repo: "4strium/RepairAndLearn",
     branch: "main",
-    subdir: "S5/SHI/repair_and_learn",
+    subdir: "",
   },
 
   /**
