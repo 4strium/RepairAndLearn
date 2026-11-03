@@ -1,0 +1,54 @@
+# Configuration Netlify — https://docs.netlify.com/configure-builds/file-based-configuration/
+#
+# Si ce projet est dans un SOUS-DOSSIER du dépôt GitHub (cas actuel), renseigner dans
+# Netlify : Site configuration → Build & deploy → « Base directory » = S5/SHI/repair_and_learn
+# Si le projet est à la racine d'un dépôt dédié, ne rien changer.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# ---------- En-têtes de sécurité et cache ----------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# CSS / JS : nom de fichier haché → cache « à vie »
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/rendez-vous/*.ics"
+  [headers.values]
+    Content-Type = "text/calendar; charset=utf-8"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-store"
+
+# Netlify sert automatiquement /404.html pour les pages introuvables.
