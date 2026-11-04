@@ -19,10 +19,11 @@ export function layout(ctx, page) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="google-site-verification" content="dk40bC_nqW2Ud7Sq8P-PgkOnsDHqLzqscBtAEhM2J64" />
   <title>${fullTitle}</title>
   <meta name="description" content="${description}">
   <link rel="canonical" href="${url}">
-  ${page.noindex ? raw('<meta name="robots" content="noindex">') : ""}
+  ${page.noindex ? raw('<meta name="robots" content="index, follow">') : ""}
   <meta name="theme-color" content="#A60321">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
