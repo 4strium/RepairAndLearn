@@ -31,14 +31,6 @@ export function layout(ctx, page) {
   <link rel="manifest" href="/manifest.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${config.name}">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Repair n' Learn",
-    "url": "https://repair-and-learn.netlify.app/"
-  }
-  </script>
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="${fullTitle}">
   <meta property="og:description" content="${description}">
