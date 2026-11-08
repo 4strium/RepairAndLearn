@@ -41,7 +41,7 @@ export function layout(ctx, page) {
   <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="${assets.css}">
   <script>document.documentElement.classList.add("js")</script>
-  ${(page.jsonld ?? []).map((j) => raw(`<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`)).join("")}
+  ${(page.jsonld ?? []).map((j) => raw(`<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`))}
 </head>
 <body class="${page.bodyClass ?? ""}">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
