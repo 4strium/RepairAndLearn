@@ -23,7 +23,7 @@ export function layout(ctx, page) {
   <title>${fullTitle}</title>
   <meta name="description" content="${description}">
   <link rel="canonical" href="${url}">
-  ${page.noindex ? raw('<meta name="robots" content="index, follow">') : ""}
+  ${page.noindex ? raw('<meta name="robots" content="noindex, nofollow">') : ""}
   <meta name="theme-color" content="#A60321">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
@@ -31,6 +31,14 @@ export function layout(ctx, page) {
   <link rel="manifest" href="/manifest.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${config.name}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Repair n' Learn",
+    "url": "https://repair-and-learn.netlify.app/"
+  }
+  </script>
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="${fullTitle}">
   <meta property="og:description" content="${description}">
@@ -41,7 +49,7 @@ export function layout(ctx, page) {
   <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="${assets.css}">
   <script>document.documentElement.classList.add("js")</script>
-  ${(page.jsonld ?? []).map((j) => raw(`<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`))}
+  ${(page.jsonld ?? []).map((j) => raw(`<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`)).join("")}
 </head>
 <body class="${page.bodyClass ?? ""}">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
